@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   get '/tasks/:id', to: 'tasks#show', as: :task# reading an exisiting task by id
   # CREATE 1 task
   post '/tasks', to: 'tasks#create' # creates task upon clicking submit (its a convention from the form which always posts to index)
-  # # UPDATE 1 task
-  get '/tasks/:id/edit', to: 'tasks#edit' # edit page for prefilled form for a specific task ID
-  # patch '/tasks/:id', to: 'tasks#update'
-  # # DELETE 1 task
-  # delete '/tasks/:id', to: 'tasks#destroy'
+  # UPDATE 1 task
+  get '/tasks/:id/edit', to: 'tasks#edit', as: :edit_task # edit page for prefilled form for a specific task ID
+  patch '/tasks/:id', to: 'tasks#update'
+  # DELETE 1 task
+  delete '/tasks/:id', to: 'tasks#destroy', as: :delete
 end
